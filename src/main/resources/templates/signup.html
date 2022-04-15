@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+
+</head>
+<body>
+<div>
+    <a href="/" style="font-size: 20pt; color: blue;">홈</a>
+    <a href="login" style="font-size: 20pt; color: blue;">로그인</a>
+</div>
+<hr>
+<div class="container">
+    <p  th:text="${message}" style="font-size: 15pt; color: red;"></p>
+    <h3>정보를 입력해주세요!</h3>
+    <form action="/signup" method="post">
+        <div class="form-group">
+
+            <label for="name">이름 : </label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+            <br><br>
+            <label for="email">이메일 : </label>
+            <input type="text" id="email" name="email" placeholder="1234@naver.com">
+            <br><br>
+            <label for="password">비밀번호 : </label>
+            <input type="password" id="password" name="password" placeholder="******">
+            <br><br>
+            <label for="password2">비밀번호 확인 : </label>
+            <input type="password" id="password2" name="password2" placeholder="******" onkeyup="CheckPass()">
+            <p id="checkpassmessage"></p>
+        </div>
+        <button type="submit">등록</button>
+    </form>
+
+    <script>
+        function CheckPass() {
+            if (document.getElementById("password").value!=document.getElementById("password2").value) {
+                document.getElementById("checkpassmessage").textContent = "비밀번호가 일치하지 않습니다"
+            } else {
+                document.getElementById("checkpassmessage").textContent = "비밀번호가 일치합니다"
+            }
+        }
+    </script>
+</div>
+
+
+
+</body>
+</html>

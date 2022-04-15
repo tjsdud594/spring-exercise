@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div>
+    <a href="/" style="font-size: 20pt; color: blue;">홈</a>
+    <a href="/signup" style="font-size: 20pt; color: blue;">회원가입</a>
+</div>
+<form action="/login" method="post">
+    <p  th:text="${error}" style="font-size: 15pt; color: red;"></p>
+    <div class="form-group">
+
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email" placeholder="1234@naver.com">
+
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" name="password" placeholder="******">
+    </div>
+    <button type="submit">로그인</button>
+</form>
+
+</body>
+</html>
